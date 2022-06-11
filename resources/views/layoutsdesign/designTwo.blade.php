@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <h3>
+        @include('layoutsdesign.LoggedinBar')
+        </h3>
+        <div>
+            @yield('content')
+        </div>
+    </body>
+</html>
