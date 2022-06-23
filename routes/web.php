@@ -14,7 +14,10 @@ Route::get('/login',[pagesController::class,'login'])->name('login');
 Route::post('/login',[pagesController::class,'loginValidation'])->name('login.validation');
 Route::get('/register',[pagesController::class,'register'])->name('registration');
 Route::post('/register',[pagesController::class,'registerValidation'])->name('registration.validation');
-Route::get('/dashboard',[pagescontroller::class,'dashboard'])->name('dashboard');
+
+Route::get('/dashboard',[pagescontroller::class,'dashboard'])->name('dashboard')->middleware('logged.user');
+Route::get('/user/userDashboard',[pagescontroller::class,'userdashboard'])->name('userdashboard');
+
 Route::get('/user/details/{id}',[pagesController::class,'showdetail'])->name('user.details');
 Route::get('/user/showDetails',[pagesController::class,'showdetail'])->name('user.showDetails');
 Route::get('/customer/all',[pagescontroller::class,'details'])->name('customer.details');
